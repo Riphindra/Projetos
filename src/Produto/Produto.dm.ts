@@ -4,6 +4,21 @@ import { ProdutoEntity } from "./Produto.entity";
 
 @Injectable()   
 export class ProdutoArmazenados{
+  Produtoativo(ativo: Boolean, novosDados: CriaProdutoDTO) {
+    throw new Error("Method not implemented.");
+  }
+  RemoveEstoque(estoque: Uint8Array, novosDados: CriaProdutoDTO) {
+    throw new Error("Method not implemented.");
+  }
+  Adicionarestoque(_estoque: Uint8Array, _novosDados: CriaProdutoDTO) {
+    throw new Error("Method not implemented.");
+  }
+  buscaId(_id: String, _novosDados: CriaProdutoDTO) {
+    throw new Error("Method not implemented.");
+  }
+  buscaNome(_nome: string, _novosDados: CriaProdutoDTO) {
+    throw new Error("Method not implemented.");
+  }
   buscaProduto(id: string, novosDados: CriaProdutoDTO) {
     throw new Error("Method not implemented.");
   }

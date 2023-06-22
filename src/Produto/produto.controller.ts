@@ -8,6 +8,7 @@ import {v4 as uuid} from 'uuid';
 @Controller('/produto')
 
 export class ProdutoController{
+  #usuarios: any;
 
  constructor(private clsProdutosArmazenados: ProdutoArmazenados){
  }
@@ -64,13 +65,23 @@ async removeUsuario(@Param('id') id: string){
     message:'Produto removido'
    }
  }
- @Get('/:Nome')
- async buscaProduto(@Param('nome') nome: string, @Body() novosDados: CriaProdutoDTO){
-   const produtoAtualizado = await this.clsProdutosArmazenados.buscaProduto(nome, novosDados);
+ @Get('nome/:Nome')
+ async buscaNome(@Param('nome') nome: string, @Body() novosDados: CriaProdutoDTO){
+   const produtoAtualizado = await this.clsProdutosArmazenados.buscaNome(nome, novosDados);
    return{
      usuario:produtoAtualizado,
      message:'Busca do nome concluida'
  
+  }
+ }
+ @Get('id/:ID')
+ async buscaID(@Param('Id') id: string, @Body() novosDados: CriaProdutoDTO){
+  const produtoAtualizado = await this.clsProdutosArmazenados.buscaId(id, novosDados);
+  return{
+    usuario:produtoAtualizado,
+    message:'Busca do id concluida'
+
  }
  }
+
 }
