@@ -65,7 +65,7 @@ async removeUsuario(@Param('id') id: string){
     message:'Produto removido'
    }
  }
- @Get('nome/:Nome')
+ @Get('/nome:-nome')
  async buscaNome(@Param('nome') nome: string, @Body() novosDados: CriaProdutoDTO){
    const produtoAtualizado = await this.clsProdutosArmazenados.buscaNome(nome, novosDados);
    return{
@@ -74,7 +74,7 @@ async removeUsuario(@Param('id') id: string){
  
   }
  }
- @Get('id/:ID')
+ @Get('/id:-id')
  async buscaID(@Param('Id') id: string, @Body() novosDados: CriaProdutoDTO){
   const produtoAtualizado = await this.clsProdutosArmazenados.buscaId(id, novosDados);
   return{
@@ -105,6 +105,14 @@ async removeUsuario(@Param('id') id: string){
     return{
       usuario:estoqueremovido,
       message: "Estoque Removido"
+    }
+  }
+  @Get('/cor:-cor')
+  async Buscaporcor(@Param('cor')cor:String, @Body() novosDados: CriaProdutoDTO){
+    const produtoAtualizado = await this.clsProdutosArmazenados.Buscaporcor(cor,novosDados);
+    return{
+      usuario:produtoAtualizado,
+      message: "busca por cor com sucesso"
     }
   }
 
