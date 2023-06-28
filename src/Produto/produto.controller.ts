@@ -115,5 +115,13 @@ async removeUsuario(@Param('id') id: string){
       message: "busca por cor com sucesso"
     }
   }
+  @Get('/marca:-marca')
+  async Buscapormarca(@Param('marca')marca:String, @Body() novosDados: CriaProdutoDTO){
+    const produtoAtualizado = await this.clsProdutosArmazenados.Buscapormarca(marca,novosDados);
+    return{
+      usuario:produtoAtualizado,
+      message: "busca por marca com sucesso"
+    }
+  }
 
 }

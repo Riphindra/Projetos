@@ -4,6 +4,9 @@ import { ProdutoEntity } from "./Produto.entity";
 
 @Injectable()   
 export class ProdutoArmazenados{
+  Buscapormarca(cor: String, novosDados: CriaProdutoDTO) {
+    throw new Error("Method not implemented.");
+  }
   Buscaporcor(cor: String, novosDados: CriaProdutoDTO) {
     throw new Error("Method not implemented.");
   }
