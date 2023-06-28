@@ -83,5 +83,29 @@ async removeUsuario(@Param('id') id: string){
 
  }
  }
+ @Put('produto')
+  async Modificaproduto(@Param('produto') produto: string, @Body() novosDados: CriaProdutoDTO){
+    const produtoModificado = await this.clsProdutosArmazenados.Modificaproduto(produto,novosDados);
+    return{
+      usuario:produtoModificado,
+      message: 'Modificado com sucesso'
+    } 
+  }
+  @Post('estoque')
+  async Adicionarestoque(@Param('estoque') estoque:BigInteger,@Body() novosDados: CriaProdutoDTO){
+    const estoqueadicionado = await this.clsProdutosArmazenados.Adicionarestoque(estoque,novosDados);
+    return{
+      usuario:estoqueadicionado,
+      message: "Estoque adicionado"
+    }
+  }
+  @Delete('estoque')
+  async Removeestoque(@Param('estoque')estoque:BigInteger,@Body() novosDados: CriaProdutoDTO){
+    const estoqueremovido = await this.clsProdutosArmazenados.RemoveEstoque(estoque,novosDados);
+    return{
+      usuario:estoqueremovido,
+      message: "Estoque Removido"
+    }
+  }
 
 }

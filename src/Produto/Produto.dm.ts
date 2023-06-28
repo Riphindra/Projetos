@@ -4,6 +4,9 @@ import { ProdutoEntity } from "./Produto.entity";
 
 @Injectable()   
 export class ProdutoArmazenados{
+  Modificaproduto(produto: string, novosDados: CriaProdutoDTO) {
+    throw new Error("Method not implemented.");
+  }
   Produtoativo(ativo: Boolean, novosDados: CriaProdutoDTO) {
     throw new Error("Method not implemented.");
   }

@@ -37,8 +37,8 @@ nome: string;
     
      @IsString({message: "Telefone inválido"})
     
-        telefone: string;
+     telefone: string;
     
-       
-    
+     @IsString({message:"Produto inválido"})
+     produto: string;
     }

@@ -41,8 +41,6 @@ export class CriaProdutoDTO{
         }
 
 
-function ProdutoUnico(arg0: { message: string; }) {
-    throw new Error("Function not implemented.");
-}
+
 
 
